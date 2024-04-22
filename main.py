@@ -35,9 +35,3 @@ print(test.pop())
 
 for i in range(10):
     test.add(i)
-
-a = [1,2,3,4,5]
-a = test.mul_verify(a)
-
-for i in a():
-    print(i)
