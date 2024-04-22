@@ -32,6 +32,3 @@ test.pop()
 test.pop()
 test.add(50)
 print(test.pop())
-
-for i in range(10):
-    test.add(i)
