@@ -1,3 +1,5 @@
+from logic_interpreter.functions.validator import identify
+
 class Logic:
     def __init__(self, data):
       if data["if"]:
@@ -23,10 +25,10 @@ class Logic:
         if "(" in pattern or ")" in pattern:
           self.solveParanteses()
         else:
-          self.translate()
+          self.translate(pattern[0], pattern[1], pattern[2])
 
-      def translate(self):
-        pass
+      def translate(self, p1, signal, p2):
+        identify(p1, signal, p2)
 
       def solveParanteses(self):
         pass
