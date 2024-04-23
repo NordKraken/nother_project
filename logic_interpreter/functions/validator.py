@@ -9,8 +9,14 @@ signals = {
     "//":6,
     "%":7,
     "**":8,
+    ">":0,
+    "<":0,
+    ">=":0,
+    "<=":0,
 }
 
 def identify(obj1, signal, obj2):
     if signal in signals:
         print(signals[signal])
+    else:
+        return Exception
