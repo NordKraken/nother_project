@@ -9,7 +9,7 @@ class Type:
         if self.value == "n":
             self.value == "f"
         if value == "n":
-            value == "f"
+            value = "f"
         if self.value != value:
             return False
         return True
