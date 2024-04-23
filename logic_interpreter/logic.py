@@ -6,19 +6,25 @@ class Logic:
 
     def __repr__(self):
       return "Logic class validator"
-    
-    def interpreter(self):
-      if self.ifObj.ifData:
-        pattern = self.ifObj.getPattern()
 
     class If:
       def __init__(self, ifData):
         self.ifData = ifData
+
+      def delElement(self):
+        if self.ifData:
+          del self.ifData[0]
       
+      def interpreter(self):
+        if not self.ifData:
+          return
+        pattern = self.getPattern()
+        self.delElement()
+        print(pattern)
+
       def getPattern(self):
         if self.ifData:
           pattern = self.ifData[0]
-          del self.ifData[0]
           pattern = [s for s in pattern]
           return pattern
         return None

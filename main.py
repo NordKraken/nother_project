@@ -32,3 +32,7 @@ test.pop()
 test.pop()
 test.add(50)
 print(test.pop())
+
+test = logic.Logic(data)
+
+test.ifObj.interpreter()
