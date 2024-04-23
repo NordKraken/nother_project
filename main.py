@@ -1,13 +1,15 @@
 import json
-from logic_interpreter import logic, type
-from logic_interpreter import stack
+from logic_interpreter.logic import Logic
+from logic_interpreter.type import Type
+from logic_interpreter.stack import Stack
+from logic_interpreter.functions.validator import identify
 
 with open('data.json', 'r') as file:
     data = json.load(file)
 
-t1 = type.Type("s")
-t2 = type.Type("f")
-t3 = type.Type("f")
+t1 = Type("s")
+t2 = Type("f")
+t3 = Type("f")
 
 print(t1 + t2)
 print(t2 + t3)
@@ -15,11 +17,11 @@ print(t2 + t3)
 print(t1 > t2)
 print(t2 > t3)  
 
-test = logic.Logic(data)
+test = Logic(data)
 
 print(test.ifObj.getPattern())
 
-test = stack.Stack(10)
+test = Stack(10)
 test.add(20)
 test.add(30)
 test.add(40)
@@ -33,6 +35,8 @@ test.pop()
 test.add(50)
 print(test.pop())
 
-test = logic.Logic(data)
+test = Logic(data)
 
 test.ifObj.interpreter()
+
+identify(test, "+", test)

@@ -6,6 +6,10 @@ class Type:
         return "Type of the parameter value"
 
     def validador(self, value):
+        if self.value == "n":
+            self.value == "f"
+        if value == "n":
+            value == "f"
         if self.value != value:
             return False
         return True
@@ -42,9 +46,9 @@ class Type:
         return False
     
     def convertBase(self, obj):
-        if self.value == "f":
+        if self.value == "f" or self.value == "n":
             self.value == "s"
-        if obj.value == "f":
+        if obj.value == "f" or obj.value == "n":
             obj.value == "s"
 
     def __eq__(self, obj):
