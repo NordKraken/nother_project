@@ -20,7 +20,16 @@ class Logic:
           return
         pattern = self.getPattern()
         self.delElement()
-        print(pattern)
+        if "(" in pattern or ")" in pattern:
+          self.solveParanteses()
+        else:
+          self.translate()
+
+      def translate(self):
+        pass
+
+      def solveParanteses(self):
+        pass
 
       def getPattern(self):
         if self.ifData:
