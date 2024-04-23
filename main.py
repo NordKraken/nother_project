@@ -7,4 +7,8 @@ from logic_interpreter.functions.validator import identify
 with open('data.json', 'r') as file:
     data = json.load(file)
 
-identify("f", "+", "n")
+try:
+    identify("f", "=", "f")
+except:
+    err = Exception("A error occurs")
+    print(err)

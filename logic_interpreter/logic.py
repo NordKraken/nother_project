@@ -28,7 +28,8 @@ class Logic:
           self.translate(pattern[0], pattern[1], pattern[2])
 
       def translate(self, p1, signal, p2):
-        identify(p1, signal, p2)
+        result = identify(p1, signal, p2)
+        print(result)
 
       def solveParanteses(self):
         pass

@@ -20,7 +20,6 @@ def identify(obj1, signal, obj2):
     if signal in signals:
         obj1 = Type(obj1)
         obj2 = Type(obj2)
-        result = signals[signal](obj1, obj2)
-        print(result)
+        return signals[signal](obj1, obj2)
     else:
-        return Exception
+        return Exception("A error occurs")
