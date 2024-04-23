@@ -1,22 +1,26 @@
 from logic_interpreter.type import Type
+from logic_interpreter.functions import operators
 
 signals = {
-    "=":1,
-    "+":2,
-    "-":3,
-    "*":4,
-    "/":5,
-    "//":6,
-    "%":7,
-    "**":8,
-    ">":0,
-    "<":0,
-    ">=":0,
-    "<=":0,
+    "=": operators.equal,
+    "+": operators.add,
+    "-": operators.sub,
+    "*": operators.mul,
+    "/": operators.truediv,
+    "//": operators.floordiv,
+    "%": operators.mod,
+    "**": operators.pow,
+    ">": operators.greater,
+    "<": operators.less,
+    ">=": operators.greaterEqual,
+    "<=": operators.lessEqual,
 }
 
 def identify(obj1, signal, obj2):
     if signal in signals:
-        print(signals[signal])
+        obj1 = Type(obj1)
+        obj2 = Type(obj2)
+        result = signals[signal](obj1, obj2)
+        print(result)
     else:
         return Exception
