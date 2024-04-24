@@ -12,30 +12,30 @@ class Logic:
       def __init__(self, ifData):
         self.ifData = ifData
         self.translateData = []
-        self.interpreter()
+        self._interpreter()
 
-      def delElement(self):
+      def _delElement(self):
         if self.ifData:
           del self.ifData[0]
       
-      def interpreter(self):
+      def _interpreter(self):
         if not self.ifData:
           return
         while self.ifData:
-          pattern = self.getPattern()
-          self.delElement()
+          pattern = self._getPattern()
+          self._delElement()
           if "(" in pattern or ")" in pattern:
-            self.solveParanteses()
+            self._solveParanteses()
           else:
-            self.translate(pattern[0], pattern[1], pattern[2])
+            self._translate(pattern[0], pattern[1], pattern[2])
 
-      def translate(self, p1, signal, p2):
+      def _translate(self, p1, signal, p2):
         self.translateData.append(identify(p1, signal, p2))
 
-      def solveParanteses(self):
+      def _solveParanteses(self):
         pass
 
-      def getPattern(self):
+      def _getPattern(self):
         if self.ifData:
           pattern = self.ifData[0]
           pattern = [s for s in pattern]

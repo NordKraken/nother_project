@@ -3,7 +3,7 @@ class Node:
         self.value = value
         self.pointer = pointer    
     
-    def setPointer(self, pointer):
+    def _setPointer(self, pointer):
         self.pointer = pointer
 
     def getNext(self):
@@ -24,7 +24,7 @@ class Stack:
     def __len__(self):
         return self.size
     
-    def setSize(self, value=1):
+    def _setSize(self, value=1):
         if value == 1:
             self.size += 1
         elif self.size == -1:
@@ -33,11 +33,11 @@ class Stack:
     def add(self, value):
         if self.first == self.last:
             self.first = Node(value, self.last)
-            self.setSize()
+            self._setSize()
             return
         node = Node(value, self.first)
         self.first = node
-        self.setSize()
+        self._setSize()
     
     def pop(self):
         if self.first == self.last:
@@ -45,13 +45,13 @@ class Stack:
             del self.first
             self.first = None
             self.last = None
-            self.setSize(-1)
+            self._setSize(-1)
             return value
         node = self.first
         self.first = self.first.getNext()
         value = node.getValue()
         del node
-        self.setSize(-1)
+        self._setSize(-1)
         return value
     
     def verify(self, value):
@@ -61,3 +61,12 @@ class Stack:
                 return True
             node = node.getNext()
         return False
+    
+    def show(self):
+        self._getNodes(self.first)
+
+    def _getNodes(self, node):
+        if node == None:
+            return
+        print(node.getValue())
+        self._getNodes(node.getNext())
