@@ -4,7 +4,6 @@ class Logic:
     def __init__(self, data):
       if data["if"]:
         self.ifObj = Logic.If(data["if"])
-        self.newIfData = []
 
     def __repr__(self):
       return "Logic class validator"
@@ -12,6 +11,8 @@ class Logic:
     class If:
       def __init__(self, ifData):
         self.ifData = ifData
+        self.translateData = []
+        self.interpreter()
 
       def delElement(self):
         if self.ifData:
@@ -20,16 +21,16 @@ class Logic:
       def interpreter(self):
         if not self.ifData:
           return
-        pattern = self.getPattern()
-        self.delElement()
-        if "(" in pattern or ")" in pattern:
-          self.solveParanteses()
-        else:
-          self.translate(pattern[0], pattern[1], pattern[2])
+        while self.ifData:
+          pattern = self.getPattern()
+          self.delElement()
+          if "(" in pattern or ")" in pattern:
+            self.solveParanteses()
+          else:
+            self.translate(pattern[0], pattern[1], pattern[2])
 
       def translate(self, p1, signal, p2):
-        result = identify(p1, signal, p2)
-        print(result)
+        self.translateData.append(identify(p1, signal, p2))
 
       def solveParanteses(self):
         pass

@@ -7,7 +7,7 @@ with open('data.json', 'r') as file:
 
 try:
     test = Logic(data)
-    test.ifObj.interpreter()
+    print(test.ifObj.translateData)
 except:
     err = Exception("A error occurs")
     print(err)
