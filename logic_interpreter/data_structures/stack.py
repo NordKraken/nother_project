@@ -1,19 +1,4 @@
-class Node:
-    def __init__(self, value, pointer=None):
-        self.value = value
-        self.pointer = pointer    
-    
-    def _setPointer(self, pointer):
-        self.pointer = pointer
-
-    def getNext(self):
-        return self.pointer
-    
-    def setValue(self, value):
-        self.value = value
-
-    def getValue(self):
-        return self.value
+from logic_interpreter.data_structures.node import Node
 
 class Stack:
     def __init__(self, value):
@@ -23,6 +8,9 @@ class Stack:
 
     def __len__(self):
         return self.size
+    
+    def __repr__(self):
+        return "Stack data structure"
     
     def _setSize(self, value=1):
         if value == 1:
