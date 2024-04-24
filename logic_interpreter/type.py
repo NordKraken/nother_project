@@ -7,7 +7,7 @@ class Type:
 
     def validador(self, value):
         if self.value == "n":
-            self.value == "f"
+            self.value = "f"
         if value == "n":
             value = "f"
         if self.value != value:
