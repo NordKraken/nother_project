@@ -29,6 +29,8 @@ class Stack:
     
     def pop(self):
         if self.first == self.last:
+            if self.first == None:
+                return
             value = self.first.getValue()
             del self.first
             self.first = None

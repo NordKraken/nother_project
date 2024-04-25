@@ -33,3 +33,18 @@ class Queue:
             return
         print(node.getValue())
         self._getNodes(node.getBehind())
+
+    def pop(self):
+        if self.first == self.last:
+            if self.first == None:
+                return
+            value = self.first.getValue()
+            del self.first
+            self.first = None
+            self.last = self.first
+            return value
+        value = self.first.getValue()
+        node = self.first
+        self.first = self.first.getBehind()
+        del node
+        return value
