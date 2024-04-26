@@ -15,6 +15,9 @@ class Queue:
     def __len__(self):
         return self.size
     
+    def __repr__(self):
+        return f"Queue()"
+    
     def add(self, value):
         if self.first == None:
             self.first = Node(value)

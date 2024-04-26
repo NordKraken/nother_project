@@ -10,7 +10,7 @@ class Stack:
         return self.size
     
     def __repr__(self):
-        return "Stack data structure"
+        return "Stack()"
     
     def _setSize(self, value=1):
         if value == 1:

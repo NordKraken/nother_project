@@ -7,13 +7,16 @@ class Logic:
         self.ifObj = Logic.If(data["if"])
 
     def __repr__(self):
-      return "Logic class validator"
+      return "Logic(data)"
 
     class If:
       def __init__(self, ifData):
         self.ifData = ifData
         self.translateData = []
         self._interpreter()
+
+      def __repr__(self):
+        return f"If({self.ifData})"
 
       def _delElement(self):
         if self.ifData:
