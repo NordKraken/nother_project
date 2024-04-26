@@ -6,6 +6,3 @@ def observer(data):
         compacted += data[0]
         del data[0]
     return compacted
-
-def resolve(compacted):
-    pass

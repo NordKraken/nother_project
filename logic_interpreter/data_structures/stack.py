@@ -1,7 +1,7 @@
 from logic_interpreter.data_structures.node import Node
 
 class Stack:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.last = Node(value)
         self.first = self.last
         self.size = 1
@@ -20,6 +20,9 @@ class Stack:
     
     def add(self, value):
         if self.first == self.last:
+            if self.first.getValue() == None:
+                self.first.setValue(value)
+                return
             self.first = Node(value, self.last)
             self._setSize()
             return

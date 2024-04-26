@@ -1,7 +1,7 @@
 from logic_interpreter.data_structures.node import Node
 
 class Queue:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.first = Node(value)
         self.last = self.first
         self.size = 1
@@ -20,6 +20,10 @@ class Queue:
             self.first = Node(value)
             self.last = self.first
             self._setSize()
+            return
+        elif self.first.getValue() == None:
+            self.first.setValue(value)
+            return
         node = Node(value, self.last)
         self.last._setPointer(self.last.getNext(), node)
         self.last = node
