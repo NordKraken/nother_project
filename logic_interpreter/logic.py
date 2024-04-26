@@ -1,4 +1,5 @@
 from logic_interpreter.functions.validator import identify
+from logic_interpreter.functions.parenteses import observer
 
 class Logic:
     def __init__(self, data):
@@ -25,15 +26,15 @@ class Logic:
           pattern = self._getPattern()
           self._delElement()
           if "(" in pattern or ")" in pattern:
-            self._solveParanteses()
+            self._solveParanteses(pattern)
           else:
             self._translate(pattern[0], pattern[1], pattern[2])
 
       def _translate(self, p1, signal, p2):
         self.translateData.append(identify(p1, signal, p2))
 
-      def _solveParanteses(self):
-        pass
+      def _solveParanteses(self, pattern):
+        self.translateData.append(observer(pattern))
 
       def _getPattern(self):
         if self.ifData:

@@ -1,4 +1,4 @@
 {
-    "if": ["f=f", "s=s", "f=s", "s=s", "s=f", "n=n", "f=n", "s=n"],
+    "if": ["(s=s)+f=n","(f=f)+f=f-f","f=f", "s=s", "f=s", "s=s", "s=f", "n=n", "f=n", "s=n"],
     "arithmetic": ["f+f", "s+s", "f-s"]
 }
