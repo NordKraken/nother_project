@@ -48,6 +48,3 @@ class Logic:
       
       def __len__(self):
         return len(self.ifData)
-
-      def __repr__(self):
-        return "If class validator"
