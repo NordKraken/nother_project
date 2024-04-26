@@ -48,3 +48,11 @@ class Queue:
         self.first = self.first.getBehind()
         del node
         return value
+    
+    def verify(self, value):
+        node = self.first
+        while node != None:
+            if node.getValue() == value:
+                return True
+            node = node.getBehind()
+        return False
