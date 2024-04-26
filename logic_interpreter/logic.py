@@ -1,5 +1,4 @@
 from logic_interpreter.functions.validator import identify
-from logic_interpreter.functions.parenteses import observer
 
 class Logic:
     def __init__(self, data):
