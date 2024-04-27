@@ -1,5 +1,5 @@
 from logic_interpreter.functions.validator import identify
-
+from logic_interpreter.functions.parenteses import parenteses
 class Logic:
     def __init__(self, data):
       if data["if"]:
@@ -36,7 +36,7 @@ class Logic:
         self.translateData.append(identify(p1, signal, p2))
 
       def _solveParanteses(self, pattern):
-        self.translateData.append(observer(pattern))
+        parenteses(pattern)
 
       def _getPattern(self):
         if self.ifData:

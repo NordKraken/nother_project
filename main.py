@@ -11,5 +11,5 @@ try:
     test = Logic(data)
     print(test.ifObj.translateData)
 except:
-    err = Exception("A error occurs")
+    err = Exception("A error occurs on main")
     print(err)
