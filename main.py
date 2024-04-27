@@ -7,9 +7,13 @@ from logic_interpreter.data_structures.queue import Queue
 with open('data.json', 'r') as file:
     data = json.load(file)
 
-try:
-    test = Logic(data)
-    print(test.ifObj.translateData)
-except:
-    err = Exception("A error occurs on main")
-    print(err)
+test = Logic(data)
+
+jsonData = {
+    "if": test.ifObj.translateData
+}
+
+jsonData = json.dumps(jsonData, indent=4)
+
+with open('response.json', 'w') as file:
+    file.write(jsonData)

@@ -1,4 +1,20 @@
 {
-    "if": ["(s-s)+f=(f+f)","(f+f)+f=(f-f)","f=f", "s=s", "f=s","(s-s)+s=s", "s=s", "s=f", "n=n", "f=n", "s=n"],
-    "arithmetic": ["f+f", "s+s", "f-s"]
+    "if": [
+        "(s-s)+f=(f+f)",
+        "(f+f)+f=(f-f)",
+        "f=f",
+        "s=s",
+        "f=s",
+        "(s-s)+s=s",
+        "s=s",
+        "s=f",
+        "n=n",
+        "f=n",
+        "s=n"
+    ],
+    "arithmetic": [
+        "f+f",
+        "s+s",
+        "f-s"
+    ]
 }

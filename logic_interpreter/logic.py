@@ -36,7 +36,7 @@ class Logic:
         self.translateData.append(identify(p1, signal, p2))
 
       def _solveParanteses(self, pattern):
-        parenteses(pattern)
+        self.translateData.append(parenteses(pattern))
 
       def _getPattern(self):
         if self.ifData:
